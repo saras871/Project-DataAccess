@@ -23,11 +23,11 @@ public class AdminDbRepos
         var seeder = new SeedGenerator(fn);
 
         //remove existing quotes in the database
-        _dbContext.Quotes.RemoveRange(_dbContext.Quotes);
+        // _dbContext.Quotes.RemoveRange(_dbContext.Quotes);
 
-        //Seeding new quotes into the database
-        var quotes = seeder.AllQuotes.Select(q => new QuoteDbM(q)).ToList();
-        _dbContext.Quotes.AddRange(quotes);
+        // //Seeding new quotes into the database
+        // var quotes = seeder.AllQuotes.Select(q => new QuoteDbM(q)).ToList();
+        // _dbContext.Quotes.AddRange(quotes);
 
         //Save changes to the database
         await _dbContext.SaveChangesAsync();

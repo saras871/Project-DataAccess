@@ -54,9 +54,9 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddInMemoryLogger();
 
 //Inject DbRepos and Services
-builder.Services.AddScoped<AdminDbRepos>();
+// builder.Services.AddScoped<AdminDbRepos>();
 
-builder.Services.AddScoped<IAdminService, AdminServiceDb>();
+// builder.Services.AddScoped<IAdminService, AdminServiceDb>();
 
 var app = builder.Build();
 
