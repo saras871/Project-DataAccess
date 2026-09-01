@@ -3,12 +3,15 @@ using Models;
 
 public class AttractionDbM : Attraction , IEquatable<AttractionDbM>
 {
-   public AttractionDbM(string name) : base(name) { }
+   public override Guid Id { get; set; }
 
-    public bool Equals(AttractionDbM other) => (other != null) && (Name == other.Name);
+  public override string Name { get; set; }
+  public override string Description { get; set; }
+
+    public bool Equals(AttractionDbM other) => (other != null) && (Name == other.Name && Description == other.Description);
 
     public override bool Equals(object obj) => Equals(obj as AttractionDbM);
 
-    public override int GetHashCode() => Name.GetHashCode();
+    public override int GetHashCode() => (Name, Description).GetHashCode();
 
 }
